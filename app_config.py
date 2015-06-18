@@ -97,7 +97,7 @@ DEBUG = True
 """
 COPY EDITING
 """
-COPY_GOOGLE_DOC_KEY = '13wB-Fl6psiNPbl_ucUXnfyThZJbe-u9V_iA3VVfbMNo'
+COPY_GOOGLE_DOC_KEY = '1RY-q2YlD4qaOhVWVTIP9xJwYX6AduW9f2HZ36-AvHh0'
 COPY_PATH = 'data/copy.xlsx'
 
 """
@@ -109,8 +109,8 @@ SHARE_URL = 'http://%s/%s/' % (PRODUCTION_S3_BUCKET['bucket_name'], PROJECT_SLUG
 SERVICES
 """
 NPR_GOOGLE_ANALYTICS = {
-    'ACCOUNT_ID': 'none', #add id here
-    'DOMAIN': PRODUCTION_S3_BUCKET['bucket_name'],
+    'ACCOUNT_ID': 'UA-369047-1', #add id here
+    'DOMAIN': 'wbez.org',
     'TOPICS': '' # e.g. '[1014,3,1003,1002,1001]'
 }
 

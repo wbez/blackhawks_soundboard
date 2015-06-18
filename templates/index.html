@@ -1,56 +1,52 @@
 {% extends '_base.html' %}
 
 {% block header_content %}
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>{{ COPY.content.project_name|smarty }}</h1>
-                <h2>{{ COPY.content.lorem_ipsum|smarty }}</h2>
-            </div>
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{ COPY.content.project_name|smarty }}</h1>
+            <h2>{{ COPY.content.lorem_ipsum|smarty }}</h2>
         </div>
     </div>
-</header>
+</div>
+
 {% endblock %}
 
 
 {% block content %}
-<h1>{{ COPY.content.project_name }}</h1>
 
-<div id="story-meta">
-    <p class="byline">by <span>{{ COPY.content.byline }}</span></p>
-    <p class="dateblock">
-        <span class="date">{{ COPY.content.pubdate }}</span>
-        <span class="time"> {{ COPY.content.pubtime }}</span>
-    </p>
-</div>
+    {% for item in COPY.sounds%}
+    <div class="col-sm-6 col-md-4 sound-holder">
+        <div class="speaker text-center">{{item.speaker}}</div>
+        <a href="#" onClick="document.getElementById('{{item.title}}').play(); return false;">
+            <img src="assets/images/{{item.image}}.png" class="center-block">
+        </a>
+        <div class="description text-center">{{item.description}}</div>
+        <audio id="{{item.title}}">
+            <source src="assets/audio/{{item.audio}}.mp3" type="audio/mpeg">
+            <source src="assets/audio/{{item.audio}}.ogg" type="audio/ogg">
+            <source src="assets/audio/{{item.audio}}.aac" type="audio/aac">
+            Your browser doesn't support HTML5 audio
+        </audio> 
+    </div>
+    {% if loop.index is divisibleby 3 %}
+      <div class="clearfix visible-lg visible-md"></div>
+    {% endif %}
 
-<a class="comment-button comment-button-bubble comment-drawer-toggle" href="javascript:">
-    <span class="comment-count"></span>
-</a>
-
-<a class="comment-button comment-button-article comment-drawer-toggle" data-toggle="modal" data-backdrop="static" data-target="#share-modal">
-    <span class="comment-count"></span>
-    <span class="comment-label">Share / Discuss</span>
-</a>
-
-<h2 class="knockout-example">Example COPY list</h2>
-<dl>
-    {% for row in COPY.example_list %}
-    <dt>{{ row.term }}</dt><dd>{{ row.definition }}</dd>
+    {% if loop.index is divisibleby 2 %}
+      <div class="clearfix visible-sm"></div>
+    {% endif %}
     {% endfor %}
-</dl>
 
-<h2 class="knockout-example">JST example</h2>
-<p id="template-example"></p>
 {% endblock %}
 
-
-{% block wide_content %}
-<div class="row">
-    <div class="col-md-12">
-        <h2 class="knockout-example">{{ COPY.content.footer_title }}</h2>
-        <p>{{ COPY.content.lorem_ipsum }}</p>
+{% block extra_foot %}   
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="credits">Game clips courtesy WGN | Player interviews from WBEZ's Cheryl Raye Stout | Images from the Associated Press (Charles Rex Arbogast), the Chicago Blackhawks and <a href="https://www.flickr.com/photos/mjkmjk/2376255904/in/photolist-4BYW6o-qsDe4y-4rBJTx-5oTC1C-4q2WiE-qG9qtL-7D48sK-8MPi99-8MPcbJ-5P35HE-8MPbEW-8N2xKG-8MKZcB-6epWeC-8ML5bV-6ekNbn-8MPbuE-8MPewb-8ML4Qe-5H5kXT-5NMY56-5ttCKa-ass5Jk-gJ86qZ-7R1bnx-5ty1K9-5ty1s1-5ty1oL-pLWNDL-pLTQeU-3oYHQC-3oUaUB-3oYHWh-3oUaN8-3oYJ4U-bkQjmJ-bkQnrU-6oUKAh-5ttCfk-9uSmiY-bkQi5u-pLV6CB-7iB1Tc-7ipN8V-5EC9kv-5ECvKe-5EGtsC-6pxs79-qHK4gX-5NMX3k">Melody Joy Kramer (Flickr)</a></div>
+        </div>
     </div>
 </div>
-{% endblock %}
+{% endblock extra_foot %}
