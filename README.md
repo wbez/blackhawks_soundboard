@@ -1,6 +1,6 @@
-Copyright 2015 NPR.  All rights reserved.  No part of these materials may be reproduced, modified, stored in a retrieval system, or retransmitted, in any form or by any means, electronic, mechanical or otherwise, without prior written permission from NPR.
+Copyright 2015 WBEZ.  All rights reserved.  No part of these materials may be reproduced, modified, stored in a retrieval system, or retransmitted, in any form or by any means, electronic, mechanical or otherwise, without prior written permission from WBEZ.
 
-(Want to use this code? Send an email to nprapps@npr.org!)
+(Want to use this code? Send an email to web@wbez.org!)
 
 
 blackhawks_soundboard
@@ -31,7 +31,7 @@ blackhawks_soundboard
 What is this?
 -------------
 
-**TKTK: Describe blackhawks_soundboard here.**
+A super-simple soundboard celebrating the Chicago Blackhawks' 2015 Stanley Cup championship through fun sounds.
 
 Assumptions
 -----------
